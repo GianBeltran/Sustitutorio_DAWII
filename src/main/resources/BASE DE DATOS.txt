@@ -1,1 +1,18 @@
-CREATE DATABASE bd_examensusti;
+CREATE DATABASE bd_examensusti_DAWII;
+
+create table categoria(
+	idcategoria int primary key auto_increment,
+	nombre varchar(45)
+);
+
+create table docente(
+	iddocente int primary key auto_increment,
+	nombre varchar(45),
+	dni char(8),
+	fechaNacimiento date,
+	sueldo double,
+	email varchar(45),
+	sexo varchar(45),
+	idcategoria INT,
+    FOREIGN KEY (idcategoria) REFERENCES categoria(idcategoria)
+);
